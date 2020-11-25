@@ -411,7 +411,7 @@ var haveProgTestRun = internal.FeatureTest("BPF_PROG_TEST_RUN", "4.12", func() (
 
 	// Check for EINVAL specifically, rather than err != nil since we
 	// otherwise misdetect due to insufficient permissions.
-	return !errors.Is(err, unix.EINVAL), nil
+	return !errors.Is(err, unix.EINVAL), err
 })
 
 func (p *Program) testRun(in []byte, repeat int, reset func()) (uint32, []byte, time.Duration, error) {
