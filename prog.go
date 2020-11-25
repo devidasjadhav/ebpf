@@ -409,7 +409,7 @@ var haveProgTestRun = internal.FeatureTest("BPF_PROG_TEST_RUN", "4.12", func() (
 
 	err = bpfProgTestRun(&attr)
 	if err != nil {
-		fmt.printf("bpfProgTestRun returned %w" ,err)
+		fmt.Printf("bpfProgTestRun returned %w" ,err)
 	}
 	// Check for EINVAL specifically, rather than err != nil since we
 	// otherwise misdetect due to insufficient permissions.
