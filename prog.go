@@ -409,6 +409,7 @@ var haveProgTestRun = internal.FeatureTest("BPF_PROG_TEST_RUN", "4.12", func() (
 
 	err = bpfProgTestRun(&attr)
 	if err != nil {
+		fmt.Printf("Error ahead")
 		fmt.Printf("bpfProgTestRun returned %v" ,err)
 	}
 	// Check for EINVAL specifically, rather than err != nil since we
